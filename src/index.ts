@@ -1,9 +1,9 @@
 import * as unzipper from 'unzipper';
-// import { S3, AWSError } from 'aws-sdk';
+import { S3, AWSError } from 'aws-sdk';
 import { Transform } from 'stream';
 import { lookup } from 'mime-types';
 import fetch from 'node-fetch';
-// import { PromiseResult } from 'aws-sdk/lib/request';
+import { PromiseResult } from 'aws-sdk/lib/request';
 import { S3BucketWithContentsOptions } from './s3BucketWithContentsOptions';
 
 export const handler = async (event: any, context: any) => {
@@ -17,7 +17,7 @@ export const handler = async (event: any, context: any) => {
 
   try {
     console.log(event);
-    const s3 = {} as any; // new S3();
+    const s3 = new S3();
 
     if (event.RequestType === 'Create' || event.RequestType === 'Update') {
       if (!event.PhysicalResourceId) {
@@ -81,7 +81,7 @@ export const handler = async (event: any, context: any) => {
             Bucket: event.PhysicalResourceId,
             ContinuationToken: token,
           })
-          .promise()) as any;
+          .promise()) as PromiseResult<S3.ListObjectsV2Output, AWSError>;
 
         token = response.ContinuationToken;
 

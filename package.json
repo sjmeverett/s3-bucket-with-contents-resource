@@ -1,9 +1,12 @@
 {
   "name": "@sjmeverett/s3-bucket-with-contents-resource",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Stewart Everett (https://sjmeverett.uk)",
   "scripts": {
     "build": "rollup -c && node package.js"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.1.0",
