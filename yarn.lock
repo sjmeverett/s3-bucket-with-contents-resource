@@ -50,6 +50,18 @@
     estree-walker "^1.0.1"
     micromatch "^4.0.2"
 
+"@sjmeverett/cloudformation-lambda@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@sjmeverett/cloudformation-lambda/-/cloudformation-lambda-0.2.0.tgz#c3ab9356482ac0445c0959f871af1772348041d2"
+  integrity sha512-RcchNXGMiQZXU+coU1tyg0wL5KwrjYch75VqYe2KnkHd0yVVy87DiyogJ/Sg0Qg3FA0REasp5e8lcizqngCTyA==
+  dependencies:
+    "@sjmeverett/cloudformation-types" "^0.4.0"
+
+"@sjmeverett/cloudformation-types@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@sjmeverett/cloudformation-types/-/cloudformation-types-0.4.0.tgz#7dc7a47147d08cd9621e86c9e0dab3681a94aaca"
+  integrity sha512-iQAlXbYjuDXE+7giI1KcoXBnALQYB7Tnm2vuVaBiSLcOXfDoWCpHRX6J9FTZ5iqnh1NJAUJ65dqbI0ZYokeVZg==
+
 "@sjmeverett/get-package-paths@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@sjmeverett/get-package-paths/-/get-package-paths-1.0.0.tgz#8d69a3efe7f1560983f3910651dad56069b7d3c6"

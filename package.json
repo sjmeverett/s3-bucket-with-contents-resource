@@ -1,13 +1,15 @@
 {
   "name": "@sjmeverett/s3-bucket-with-contents-resource",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "author": "Stewart Everett (https://sjmeverett.uk)",
   "scripts": {
-    "build": "rollup -c && node package.js"
+    "build": "rollup -c && node pack.js && tsc"
   },
   "publishConfig": {
     "access": "public"
   },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-json": "^4.0.3",
@@ -22,6 +24,8 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@sjmeverett/cloudformation-lambda": "^0.2.0",
+    "@sjmeverett/cloudformation-types": "^0.4.0",
     "@types/node-fetch": "^2.5.7",
     "@types/unzipper": "^0.10.3",
     "aws-sdk": "^2.665.0",
@@ -30,7 +34,6 @@
     "unzipper": "^0.10.11"
   },
   "description": "A lambda for a CloudFormation custom resource which creates an S3 bucket for website hosting and unzips files onto it.",
-  "main": "package.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sjmeverett/s3-bucket-with-contents-resource.git"

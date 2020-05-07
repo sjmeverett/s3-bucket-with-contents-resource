@@ -10,7 +10,7 @@ const outstream = createWriteStream(outdir);
 const archive = archiver('zip', { zlib: { level: 9 } });
 const packagePaths = getPackagePaths(process.cwd(), includedPackages);
 
-archive.file('dist/index.js', { name: 'index.js' });
+archive.file('dist/Lambda.js', { name: 'index.js' });
 
 packagePaths.forEach((pkg) => {
   archive.directory(pkg.path, `node_modules/${pkg.name}`);
