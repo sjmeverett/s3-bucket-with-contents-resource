@@ -2,6 +2,7 @@ import { S3BucketWithContentsOptions } from './S3BucketWithContentsOptions';
 import {
   createCloudFormationCustomResource,
   CloudFormationCustomResourceProperties,
+  ResourceDescription,
 } from '@sjmeverett/cloudformation-types';
 import { createLambdaFnWithRole } from '@sjmeverett/cloudformation-lambda';
 
@@ -9,11 +10,17 @@ export interface CreateS3BucketWithContentsOptions
   extends S3BucketWithContentsOptions,
     CloudFormationCustomResourceProperties {}
 
+export type S3BucketWithContentsDescription = ResourceDescription<
+  'AWS::CloudFormation::CustomResource',
+  CreateS3BucketWithContentsOptions,
+  { DomainName: string }
+>;
+
 export function createS3BucketWithContents(
   name: string,
   options: CreateS3BucketWithContentsOptions,
-) {
-  return createCloudFormationCustomResource(name, options);
+): S3BucketWithContentsDescription {
+  return createCloudFormationCustomResource(name, options) as any;
 }
 
 export function createS3BucketWithContentsResources(
